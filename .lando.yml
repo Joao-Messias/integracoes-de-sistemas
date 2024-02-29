@@ -1,0 +1,21 @@
+name: integracoes-de-sistemas
+recipe: laravel
+config:
+  php: 8.2
+  webroot: ./public
+services:
+  node:
+    type: node:18
+    scanner: false
+    ports:
+      - 3099:3099
+tooling:
+  dev:
+    service: node
+    cmd: npm run dev
+  build:
+    service: node
+    cmd: npm run build
+  npm:
+    service: node
+    cmd: npm
